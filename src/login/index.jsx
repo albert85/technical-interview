@@ -23,6 +23,7 @@ const Login = () => {
   });
 
   const responseGoogle = (response) => {
+    console.log('****', response);
     localStorage.setItem('token', '123344');
     history.push('/dashboard')
   };
@@ -86,7 +87,7 @@ const Login = () => {
                 />
               </Box>
               <Button
-              onClick={() => handleSubmit(responseGoogle)}
+              onClick={handleSubmit(responseGoogle)}
                 style={{
                   width: '100%',
                   backgroundColor: '#6C63FF',
