@@ -53,7 +53,8 @@ const Login = () => {
               <GoogleContainer
                 clientId={process.env.REACT_APP_CLIENT_ID}
                 buttonText="Login"
-                style={{ width: '500px' }}            
+                style={{ width: '500px' }}
+                onSuccess={responseGoogle}            
               />
               <Box display="flex" alignItems="center">
                 <Divider />
