@@ -23,7 +23,6 @@ const Login = () => {
   });
 
   const responseGoogle = (response) => {
-    console.log(response);
     localStorage.setItem('token', '123344');
     history.push('/dashboard')
   };
@@ -56,8 +55,7 @@ const Login = () => {
                 buttonText="Login"
                 style={{ width: '500px' }}
                 onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                
+                onFailure={responseGoogle}                
               />
               <Box display="flex" alignItems="center">
                 <Divider />
@@ -89,7 +87,7 @@ const Login = () => {
                 />
               </Box>
               <Button
-              onClick={handleSubmit(responseGoogle)}
+              onClick={() => handleSubmit(responseGoogle)}
                 style={{
                   width: '100%',
                   backgroundColor: '#6C63FF',
