@@ -53,8 +53,9 @@ import {
 import InputField from '../components/InputField';
 import { useForm } from 'react-hook-form';
 import { ArrowForward } from '@material-ui/icons';
+import withHOC from '../common/withHOC';
 
-export default function Dashboard() {
+const Dashboard = () => {
   const { control, errors } = useForm({
     defaultValues: {
       search: '',
@@ -411,3 +412,5 @@ export default function Dashboard() {
     </DashboardContainer>
   );
 }
+
+export default withHOC(Dashboard);

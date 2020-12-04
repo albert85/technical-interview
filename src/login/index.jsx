@@ -13,7 +13,7 @@ import {
   SignInText,
 } from './style';
 
-export default function Login() {
+const Login = () => {
   const history = useHistory();
   const { control, errors, handleSubmit } = useForm({
     defaultValues: {
@@ -24,6 +24,7 @@ export default function Login() {
 
   const responseGoogle = (response) => {
     console.log(response);
+    localStorage.setItem('token', '123344');
     history.push('/dashboard')
   };
 
@@ -51,7 +52,7 @@ export default function Login() {
             <LoginContainer>
               <SignInText>SIGN IN</SignInText>
               <GoogleContainer
-                clientId="439136920782-bk5hbmg9lhd48t64da2h50hp5kndrjnd.apps.googleusercontent.com"
+                clientId={process.env.REACT_APP_CLIENT_ID}
                 buttonText="Login"
                 style={{ width: '500px' }}
                 onSuccess={responseGoogle}
@@ -106,3 +107,5 @@ export default function Login() {
     </Box>
   );
 }
+
+export default Login;
