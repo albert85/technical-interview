@@ -23,7 +23,6 @@ const Login = () => {
   });
 
   const responseGoogle = (response) => {
-    console.log('****', response);
     localStorage.setItem('token', '123344');
     history.push('/dashboard')
   };
